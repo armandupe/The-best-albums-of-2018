@@ -1,4 +1,5 @@
 body {
+  font-family: 'Questrial', sans-serif;
   background: rgba(242,246,248,1);
   background: -moz-linear-gradient(top, rgba(242,246,248,1) 0%, rgba(216,225,231,1) 38%, rgba(181,198,208,1) 57%, rgba(224,239,249,1) 100%);
   background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(242,246,248,1)), color-stop(38%, rgba(216,225,231,1)), color-stop(57%, rgba(181,198,208,1)), color-stop(100%, rgba(224,239,249,1)));
@@ -14,32 +15,95 @@ body {
   flex-wrap: wrap;
 }
 
+.navbar-open {
+  position: fixed;
+  top: 0;
+  left: 0%;
+  width: 50px;
+  height: 50px;
+  background: #fff;
+  border-radius: 10px;
+  z-index: 100;
+  cursor: pointer;
+}
+
+.navbar-open:hover {
+  cursor: pointer;
+  opacity: .9;
+}
+
+.nav-line {
+  width: 33px;
+  margin-bottom: 5px;
+  border-radius: 6px;
+  height: 5px;
+  background: #6F2214;
+  position: relative;
+  top: 23%;
+  left: 18%;
+}
+
+.navbar {
+  width: 280px;
+  height: 180px;
+  background: #000;
+  position: absolute;
+  top: 90%;
+  left: 90%;
+  display: none;
+  border-radius: 10px;
+}
+
+
+
+.navbar ul li {
+  padding: 10px;
+  text-align: center;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  font-size: 35px;
+  letter-spacing: 2px;
+  
+}
+
+.navbar ul li a:hover {
+  cursor: pointer;
+  color: #FFF2D3;
+}
+
 .player {
   width: 400px;
   height: auto;
   border: 6px solid #6F2214;
   box-shadow: 0 0 10px 5px;
-  background-color: #fff;
+  background: #fff;
   z-index: 88;
   position: fixed;
   left: 40%;
-  top: 30%;
+  top: 10%;
   display: none;
-  font-family: 'Questrial', sans-serif;
 }
 
 .player h2 {
   font-size: 30px;
+  padding-top: 10px;
   padding-left: 5px;
 }
 
 .player h3 {
   font-size: 20px;
+  padding-top: 10px;
   padding-left: 5px;
+  padding-bottom: 10px;
 }
 
 .player ol {
   padding-left: 25px;
+  padding-bottom: 10px;
 }
 
 .player ol li {
@@ -51,7 +115,6 @@ figure {
   max-width: 24.95%;
   text-align: center;
   font-size: 23px;
-  font-family: Questrial, sans-serif;
 }
 
 figcaption {
@@ -61,11 +124,13 @@ figcaption {
 
 figure img:hover {
   cursor: pointer;
-  opacity: .9;
+  transform: scale(1.1)  perspective(575px) rotateY(15deg);
 }
 
 figure img {
   max-width: 100%;
   height: auto;
-  transition: .5s;
+  transition: 1s;
+  transition-delay: .1s;
+  box-shadow: 0 0 5px 2px;
 }
