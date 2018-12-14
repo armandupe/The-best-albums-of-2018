@@ -45,7 +45,7 @@
     <figcaption>Converge - Beautiful Ruin</figcaption>
   </figure>
   <div class="player player-converge">
-     <iframe frameborder="0" style="border:none;width:400px;height:600px;" width="400" height="600" src="https://music.yandex.ru/iframe/#album/5476836/hide/title/">Слушайте <a href='https://music.yandex.ru/album/5476836'>Beautiful Ruin</a> — <a href='https://music.yandex.ru/artist/64179'>Converge</a> на Яндекс.Музыке</iframe>
+      <iframe frameborder="0" style="border:none;width:100%;height:600px;" width="100%" height="600" src="https://music.yandex.ru/iframe/#album/5476836/hide/title/">Слушайте <a href='https://music.yandex.ru/album/5476836'>Beautiful Ruin</a> — <a href='https://music.yandex.ru/artist/64179'>Converge</a> на Яндекс.Музыке</iframe>
   </div>
   <figure>
     <img class="thou" src="img/ep/thou.jpg" alt="Thou - Rhei Sylvia">
@@ -187,6 +187,10 @@
 
 $(function(){
     $(".player").draggable();
+});
+
+$(function(){
+    $(".player").resizable();
 });
 
 $(".navbar-open").click(function(){
