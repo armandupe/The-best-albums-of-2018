@@ -1,6 +1,6 @@
 body {
   font-family: 'Questrial', sans-serif;
-   background: rgba(226,226,226,1);
+  background: rgba(226,226,226,1);
 background: -moz-linear-gradient(-45deg, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 30%, rgba(209,209,209,1) 57%, rgba(254,254,254,1) 100%);
 background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(226,226,226,1)), color-stop(30%, rgba(219,219,219,1)), color-stop(57%, rgba(209,209,209,1)), color-stop(100%, rgba(254,254,254,1)));
 background: -webkit-linear-gradient(-45deg, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 30%, rgba(209,209,209,1) 57%, rgba(254,254,254,1) 100%);
