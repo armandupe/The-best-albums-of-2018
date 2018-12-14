@@ -9,12 +9,39 @@
       }
 }
 
+@media screen and (max-width: 800px) {
+    .player {
+        left: 25%;
+    }
+}
+
 @media screen and (max-width: 600px) {
     .container {
         flex-direction: column;
     }
     
+    .player {
+        left: 17%;
+    }
+
     figure {
         max-width: 100%;
       }
+
+      figure img:hover {
+        opacity: .9;
+        transform: none;
+      }
+}
+
+@media screen and (max-width: 500px) {
+    .player {
+        left: 9%;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .player {
+        left: 5%;
+    }
 }
