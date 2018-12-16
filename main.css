@@ -1,18 +1,21 @@
 body {
   font-family: 'Questrial', sans-serif;
   background: rgba(226,226,226,1);
-background: -moz-linear-gradient(-45deg, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 30%, rgba(209,209,209,1) 57%, rgba(254,254,254,1) 100%);
-background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(226,226,226,1)), color-stop(30%, rgba(219,219,219,1)), color-stop(57%, rgba(209,209,209,1)), color-stop(100%, rgba(254,254,254,1)));
-background: -webkit-linear-gradient(-45deg, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 30%, rgba(209,209,209,1) 57%, rgba(254,254,254,1) 100%);
-background: -o-linear-gradient(-45deg, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 30%, rgba(209,209,209,1) 57%, rgba(254,254,254,1) 100%);
-background: -ms-linear-gradient(-45deg, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 30%, rgba(209,209,209,1) 57%, rgba(254,254,254,1) 100%);
-background: linear-gradient(135deg, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 30%, rgba(209,209,209,1) 57%, rgba(254,254,254,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', endColorstr='#fefefe', GradientType=1 );
+  background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(226,226,226,1)), color-stop(30%, rgba(219,219,219,1)), color-stop(57%, rgba(209,209,209,1)), color-stop(100%, rgba(254,254,254,1)));
+  background: -webkit-linear-gradient(-45deg, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 30%, rgba(209,209,209,1) 57%, rgba(254,254,254,1) 100%);
+  background: -o-linear-gradient(-45deg, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 30%, rgba(209,209,209,1) 57%, rgba(254,254,254,1) 100%);
+  background: -webkit-linear-gradient(315deg, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 30%, rgba(209,209,209,1) 57%, rgba(254,254,254,1) 100%);
+  background: -o-linear-gradient(315deg, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 30%, rgba(209,209,209,1) 57%, rgba(254,254,254,1) 100%);
+  background: linear-gradient(135deg, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 30%, rgba(209,209,209,1) 57%, rgba(254,254,254,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', endColorstr='#fefefe', GradientType=1 );
 }
 
 .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .navbar-open {
@@ -79,7 +82,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', end
   width: 400px;
   height: auto;
   border: 6px solid #6F2214;
-  box-shadow: 0 0 10px 5px;
+  -webkit-box-shadow: 0 0 10px 5px;
+          box-shadow: 0 0 10px 5px;
   background: #fff;
   z-index: 88;
   position: fixed;
@@ -122,15 +126,48 @@ figcaption {
   text-shadow: .5px .5px;
 }
 
+@keyframes my {
+  0% {transform: perspective(0px) rotateY(0deg)}
+  5% {transform: perspective(100px) rotateY(1.4deg)}
+  10% {transform: perspective(150px) rotateY(2.8deg)}
+  15% {transform: perspective(200px) rotateY(4.2deg)}
+  20% {transform: perspective(250px) rotateY(5.6deg)}
+  25% {transform: perspective(300px) rotateY(7deg)}
+  30% {transform: perspective(350px) rotateY(8.4deg)}
+  35% {transform: perspective(400px) rotateY(9.8deg)}
+  40% {transform: perspective(450px) rotateY(11.2deg)}
+  45% {transform: perspective(500px) rotateY(12.6deg)}
+  50% {transform: perspective(550px) rotateY(15deg)}
+  55% {transform: perspective(600px) rotateY(12.6deg) scale(1.01)}
+  60% {transform: perspective(650px) rotateY(11.2deg) scale(1.02)}
+  65% {transform: perspective(700px) rotateY(9.8deg)  scale(1.03)}
+  70% {transform: perspective(750px) rotateY(8.4deg) scale(1.04)}
+  75% {transform: perspective(800px) rotateY(7deg)  scale(1.05)}
+  80% {transform: perspective(850px) rotateY(5.6deg) scale(1.06)}
+  85% {transform: perspective(900px) rotateY(4.2deg)  scale(1.07)}
+  90% {transform: perspective(950px) rotateY(2.8deg) scale(1.08)}
+  95% {transform: perspective(1000px) rotateY(1.4deg)  scale(1.09)}
+  100% {transform: perspective(1000px) rotateY(0deg) scale(1.1)}
+}
+
 figure img:hover {
   cursor: pointer;
-  transform: scale(1.1)  perspective(575px) rotateY(15deg);
+  animation: my 1s linear;
+  animation-delay: .1s;
+  animation-fill-mode: forwards;
+  /*-webkit-transform: scale(1.1)  perspective(575px) rotateY(15deg);
+          transform: scale(1.1)  perspective(575px) rotateY(15deg);*/
 }
 
 figure img {
   max-width: 100%;
   height: auto;
+  -webkit-transition: 1s;
+  -o-transition: 1s;
   transition: 1s;
-  transition-delay: .1s;
-  box-shadow: 0 0 5px 2px;
+  -webkit-transition-delay: .1s;
+       -o-transition-delay: .1s;
+          transition-delay: .1s;
+  -webkit-box-shadow: 0 0 5px 2px;
+          box-shadow: 0 0 5px 2px;
 }
