@@ -31,17 +31,28 @@
       figure img:hover {
         opacity: .9;
         transform: none;
+        animation: none;
       }
 }
 
 @media screen and (max-width: 500px) {
     .player {
+        width: 300px;
         left: 9%;
     }
 }
 
-@media screen and (max-width: 450px) {
+
+
+@media screen and (max-width: 360px) {
     .player {
-        left: 5%;
+        left: 6.5%;
+        width: 260px;
     }
+
 }
+
+
+
+
+

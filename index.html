@@ -659,14 +659,13 @@
       $('.player-sectioned').hide('100');
     });
 
+  $(function(){
+      $(".player").draggable();
+  });
 
-$(function(){
-    $(".player").draggable();
-});
-
-$(".navbar-open").click(function(){
-  $(".navbar").slideToggle();
-});
+  $(".navbar-open").click(function(){
+    $(".navbar").slideToggle();
+  });
 
 
   });
