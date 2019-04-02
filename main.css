@@ -81,7 +81,7 @@ body {
 .player {
   width: 400px;
   height: auto;
-  border: 6px solid #6F2214;
+  border: 16px solid rgba(111, 34, 20, 1);
   -webkit-box-shadow: 0 0 10px 5px;
           box-shadow: 0 0 10px 5px;
   background: #fff;
@@ -90,6 +90,14 @@ body {
   left: 40%;
   top: 10%;
   display: none;
+}
+
+.player:hover {
+  cursor: grab;
+}
+
+.player:active {
+  cursor: grabbing;
 }
 
 .player h2 {
