@@ -493,6 +493,7 @@ figure {
 .listen-link-p-absolute:hover {
   text-decoration: underline;
   color: #6F2214;
+  transform: scale(6.5);
 }
 
 figure:hover .listen-link-p-absolute{
@@ -507,6 +508,7 @@ figcaption {
 
 
 figure img {
+ 
   max-width: 100%;
   height: auto;
   -webkit-transition: 1s;
@@ -520,6 +522,7 @@ figure img:hover {
   cursor: pointer;
   transform: perspective(700px) rotateY(15deg);
 }
+
 
 
 
