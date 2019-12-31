@@ -508,7 +508,6 @@ figcaption {
 
 
 figure img {
- 
   max-width: 100%;
   height: auto;
   -webkit-transition: 1s;
@@ -518,14 +517,10 @@ figure img {
           box-shadow: 0 0 5px 2px;
 }
 
-figure img:hover {
+figure:hover img {
   cursor: pointer;
-  transform: perspective(700px) rotateY(15deg);
+  border-radius: 50%;
 }
-
-
-
-
 
 @media screen and (max-width: 1200px) {
   .container {
@@ -543,48 +538,24 @@ figure img:hover {
   }
 }
 
-@media screen and (max-width: 800px) {
-  .player {
-      left: 25%;
-  }
-}
-
 @media screen and (max-width: 600px) {
   .container {
       flex-direction: column;
   }
   
-  .player {
-      left: 17%;
-  }
-
   figure {
       width: 100%;
     }
 
-    figure img:hover {
+    figure:hover img {
       opacity: .9;
       transform: none;
       animation: none;
+      border-radius: 0;
     }
 }
 
-@media screen and (max-width: 500px) {
-  .player {
-      width: 300px;
-      left: 9%;
-  }
-}
 
-
-
-@media screen and (max-width: 360px) {
-  .player {
-      left: 6.5%;
-      width: 260px;
-  }
-
-}
 
 
 
