@@ -404,8 +404,8 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .navbar-open {
@@ -471,34 +471,9 @@ body {
   color: #FFF2D3;
 }
 
-.player {
-  width: auto;
-  height: auto;
-  /* border: 16px solid rgba(48, 45, 45, 0.8); */
-  -webkit-box-shadow: 0 0 10px 5px;
-          box-shadow: 0 0 10px 5px;
-  background: #fff;
-  z-index: 88;
-  position: fixed;
-  left: 40%;
-  top: 10%;
-  display: none;
-}
-
-.show-player {
-  display: block;
-}
-
-.player:hover {
-  cursor: grab;
-}
-
-.player:active {
-  cursor: grabbing;
-}
 
 figure {
-  /* max-width: 24.95%; */
+  width: 25%;
   text-align: center;
   font-size: 23px;
   position: relative;
@@ -530,69 +505,24 @@ figcaption {
   text-shadow: .5px .5px;
 }
 
-/* @keyframes img-animate {
-  0% {transform: perspective(0px) rotateY(0deg)}
-    4.76% {transform: perspective(200px) rotateY(3deg)}
-    9.52% {transform: perspective(300px) rotateY(6deg)}
-    14.28% {transform: perspective(400px) rotateY(9deg)}
-    19.04% {transform: perspective(500px) rotateY(12deg)}
-    23.8% {transform: perspective(600px) rotateY(15deg)}
-    28.56% {transform: perspective(500px) rotateY(12deg)}
-    33.32% {transform: perspective(400px) rotateY(9deg)}
-    38.08% {transform: perspective(300px) rotateY(6deg)}
-    42.84% {transform: perspective(200px) rotateY(3deg)}
-    47.6% {transform: perspective(0px) rotateY(0deg)}
-    52.36% {transform: perspective(0px) rotateY(0deg) scale(1.02)}
-    57.12% {transform: perspective(0px) rotateY(0deg) scale(1.04)}
-    61.88% {transform: perspective(0px) rotateY(0deg) scale(1.06)}
-    66.64% {transform: perspective(0px) rotateY(0deg) scale(1.08)}
-    71.4% {transform: perspective(0px) rotateY(0deg) scale(1.1)}
-    76.16% {transform: perspective(0px) rotateY(0deg) scale(1.08)}
-    80.92% {transform: perspective(0px) rotateY(0deg) scale(1.06)}
-    85.68% {transform: perspective(0px) rotateY(0deg) scale(1.04)}
-    90.44% {transform: perspective(0px) rotateY(0deg) scale(1.02)}
-    100% {transform: perspective(0px) rotateY(0deg) scale(1)}
-} */
-
 
 figure img {
   max-width: 100%;
   height: auto;
-
   -webkit-transition: 1s;
   -o-transition: 1s;
   transition: 1s;
-  /* -webkit-transition-delay: .1s;
-       -o-transition-delay: .1s;
-          transition-delay: .1s; */
   -webkit-box-shadow: 0 0 5px 2px;
           box-shadow: 0 0 5px 2px;
 }
 
 figure img:hover {
   cursor: pointer;
-  /* animation: img-animate 1.3s linear; */
-  /* animation-delay: .1s; */
   transform: perspective(700px) rotateY(15deg);
 }
 
-.kenmode {
-  position: absolute;
-  max-width: 100%;
-  height: auto;
-  /* display: none; */
-  z-index: 1;
-  border-radius: 100%;
-  transition: 1s;
-}
 
 
-
-iframe {
-  border:none;
-  width:100%;
-  height:600px;
-}
 
 @media screen and (max-width: 1200px) {
   .container {
@@ -600,9 +530,14 @@ iframe {
   }
   
   figure {
-      max-width: 45%;
       font-size: 26px;
     }
+}
+
+@media screen and (max-width: 992px) {
+  figure {
+    width: 50%;
+  }
 }
 
 @media screen and (max-width: 800px) {
@@ -621,7 +556,7 @@ iframe {
   }
 
   figure {
-      max-width: 100%;
+      width: 100%;
     }
 
     figure img:hover {
