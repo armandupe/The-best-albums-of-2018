@@ -404,8 +404,8 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
 }
 
 .navbar-open {
@@ -472,9 +472,9 @@ body {
 }
 
 .player {
-  width: 400px;
+  width: auto;
   height: auto;
-  border: 16px solid rgba(111, 34, 20, 1);
+  /* border: 16px solid rgba(48, 45, 45, 0.8); */
   -webkit-box-shadow: 0 0 10px 5px;
           box-shadow: 0 0 10px 5px;
   background: #fff;
@@ -485,6 +485,10 @@ body {
   display: none;
 }
 
+.show-player {
+  display: block;
+}
+
 .player:hover {
   cursor: grab;
 }
@@ -493,31 +497,8 @@ body {
   cursor: grabbing;
 }
 
-.player h2 {
-  font-size: 30px;
-  padding-top: 10px;
-  padding-left: 5px;
-}
-
-.player h3 {
-  font-size: 20px;
-  padding-top: 10px;
-  padding-left: 5px;
-  padding-bottom: 10px;
-}
-
-.player ol {
-  padding-left: 25px;
-  padding-bottom: 10px;
-}
-
-.player ol li {
-  list-style-type: decimal;
-  padding: 10px 0 3px 0;
-}
-
 figure {
-  max-width: 24.95%;
+  /* max-width: 24.95%; */
   text-align: center;
   font-size: 23px;
   position: relative;
@@ -577,12 +558,13 @@ figcaption {
 figure img {
   max-width: 100%;
   height: auto;
+
   -webkit-transition: 1s;
   -o-transition: 1s;
   transition: 1s;
-  -webkit-transition-delay: .1s;
+  /* -webkit-transition-delay: .1s;
        -o-transition-delay: .1s;
-          transition-delay: .1s;
+          transition-delay: .1s; */
   -webkit-box-shadow: 0 0 5px 2px;
           box-shadow: 0 0 5px 2px;
 }
@@ -593,6 +575,18 @@ figure img:hover {
   /* animation-delay: .1s; */
   transform: perspective(700px) rotateY(15deg);
 }
+
+.kenmode {
+  position: absolute;
+  max-width: 100%;
+  height: auto;
+  /* display: none; */
+  z-index: 1;
+  border-radius: 100%;
+  transition: 1s;
+}
+
+
 
 iframe {
   border:none;
@@ -653,7 +647,6 @@ iframe {
   }
 
 }
-
 
 
 
