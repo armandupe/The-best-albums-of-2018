@@ -46,6 +46,14 @@ body::-webkit-scrollbar {
   width: 25%;
 }
 
+.hideFrame {
+  display: none;
+}
+
+.showFrame {
+  display: block;
+}
+
 #app {
   text-align: center;
   color: #2c3e50;
