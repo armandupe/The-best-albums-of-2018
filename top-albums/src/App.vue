@@ -32,6 +32,12 @@ body::-webkit-scrollbar {
   display: none;
 }
 
+iframe {
+  border: none;
+  width: 100%;
+  height: 450px;
+}
+
 .template-container {
   display: flex;
   flex-wrap: wrap;

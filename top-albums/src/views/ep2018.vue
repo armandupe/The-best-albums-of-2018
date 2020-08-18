@@ -1,16 +1,12 @@
 <template>
-<main class="template-container">
-  <div @click="addIframeSrc()" class="album" v-for="image in images" :key="image.id">
-  <!-- <div class="album" v-for="image in images" :key="image.id"> -->
+<main @click="addIframeSrc()" class="template-container">
+  <div class="album" v-for="image in images" :key="image.id">
     <img class="artwork" :src="image.path" :alt="alt">
     <p class="">{{image.name}}</p>
     <iframe
     loading="lazy"
     frameborder="0"
     class="hideFrame"
-    style="border:none;width:450px;height:450px;"
-    width="450"
-    height="450"
     src="">
     </iframe>
   </div>
@@ -28,41 +24,49 @@ export default {
           id: 1,
           name: 'The Fever 333 - Made An America',
           path: require('@/assets/ep2018/1.jpg'),
+          link: 'https://music.yandex.ru/iframe/#album/5156765'
         },
         {
           id: 2,
           name: 'Code Orange - The Hurt Will Go On',
           path: require('@/assets/ep2018/2.jpg'),
+          link: 'https://music.yandex.ru/iframe/#album/5156765'
         },
         {
           id: 3,
           name: 'Converge - Beautiful Ruin',
           path: require('@/assets/ep2018/3.jpg'),
+          link: 'https://music.yandex.ru/iframe/#album/5156765'
         },
         {
           id: 4,
           name: 'Cryptopsy - Book Of Suffering Tome - II',
           path: require('@/assets/ep2018/4.jpg'),
+          link: 'https://music.yandex.ru/iframe/#album/5156765'
         },
         {
           id: 5,
           name: 'Every Stranger Looks Like You - I - Levensmoeheid',
           path: require('@/assets/ep2018/5.jpg'),
+          link: 'https://music.yandex.ru/iframe/#album/5156765'
         },
         {
           id: 6,
           name: 'Nine Inch Nails - Bad Witch',
           path: require('@/assets/ep2018/6.jpg'),
+          link: 'https://music.yandex.ru/iframe/#album/5156765'
         },
         {
           id: 7,
           name: 'Rotten Sound - Suffer To Abuse',
           path: require('@/assets/ep2018/7.jpg'),
+          link: 'https://music.yandex.ru/iframe/#album/5156765'
         },
         {
           id: 8,
           name: 'Thou - Rheia Sylvia',
           path: require('@/assets/ep2018/8.jpg'),
+          link: 'https://music.yandex.ru/iframe/#album/5156765'
         },
       ],
       arrLinks: [
@@ -79,10 +83,17 @@ export default {
   },
   methods: {
     addIframeSrc() {
+      // const frames = document.getElementsByTagName('iframe');
+      // frames.forEach((frame , i) => {
+        // frame.src = this.arrLinks[i];
+        
+        const frame = event.target.nextSibling.nextSibling;
+              
+        this.arrLinks.forEach((element, i) => {
+          console.log(this.arrLinks[i]);
+          // frame.src = element;
+        });
 
-      const frames = document.getElementsByTagName('iframe');
-      frames.forEach((frame, i) => {
-        frame.src = this.arrLinks[i];
         if (!frame.classList.contains('showFrame')) {
           frame.classList.remove('hideFrame');
           frame.classList.add('showFrame');
@@ -90,34 +101,8 @@ export default {
           frame.classList.remove('showFrame');
           frame.classList.add('hideFrame');
         } 
-      }); 
-
-      
+      // });  
     }
   },
-  // mounted() {
-  //   const albums = document.getElementsByClassName('album');
-  //   albums.forEach(album => {
-  //     album.addEventListener('click', function() {
-        
-  //       let alb = event.target.closest('.album');
-  //       if (!alb) return;
-       
-  //       const frames = document.getElementsByTagName('iframe');
-  //       frames.forEach((frame, i) => {
-  //         frame.src = this.arrLinks[i];
-  //         if (!frame.classList.contains('showFrame')) {
-  //           frame.classList.remove('hideFrame');
-  //           frame.classList.add('showFrame');
-  //         } else {
-  //           frame.classList.remove('showFrame');
-  //           frame.classList.add('hideFrame');
-  //         } 
-  //       }); 
-       
-        
-  //     });
-  //   });
-  // }
 }
 </script>
