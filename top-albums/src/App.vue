@@ -34,8 +34,13 @@ body::-webkit-scrollbar {
 
 iframe {
   border: none;
-  width: 100%;
+  width: 450px;
   height: 450px;
+  position: absolute;
+  z-index: 4;
+  top: 50%;
+  left: 35%;
+  box-shadow: 1px 1px 10px 10px;
 }
 
 .template-container {
@@ -46,10 +51,19 @@ iframe {
 .artwork {
   max-width: 100%;
   height: auto;
+  transition: .3s;
+  cursor: pointer;
 }
 
 .album {
   width: 25%;
+  &__title::selection {
+    color: #42b983;
+  }
+}
+
+.artwork:hover {
+  opacity: .7;
 }
 
 .hideFrame {
