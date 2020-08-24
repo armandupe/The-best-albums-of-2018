@@ -43,6 +43,20 @@ iframe {
   box-shadow: 1px 1px 10px 10px;
 }
 
+.close-button {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  font-size: 2.5rem;
+  top: 45%;
+  left: 59%;
+  z-index: 66;
+  cursor: pointer;
+  &:hover {
+    color: #42b983;
+  }
+}
+
 .template-container {
   display: flex;
   flex-wrap: wrap;
@@ -53,6 +67,10 @@ iframe {
   height: auto;
   transition: .3s;
   cursor: pointer;
+}
+
+.filter-blur {
+  filter: blur(3px);
 }
 
 .album {

@@ -7,8 +7,10 @@
     loading="lazy"
     frameborder="0"
     class="hideFrame"
+    v-show="isFrameShown"
     :src="image.link">
     </iframe>
+    <div @click="closeFrame()" v-show="isFrameVisible" class="close-button">×</div>
   </div>
 </main>
 </template>
@@ -18,54 +20,56 @@ export default {
   name: 'ep2018',
   data () {
     return {
+      isFrameVisible: false,
+      isFrameShown: true,
       alt: 'album cover',
       images: [
         {
           id: 1,
           name: 'The Fever 333 - Made An America',
-          path: require('@/assets/ep2018/1.jpg'),
+          path:  require('@/assets/ep2018/1.jpg'),
           link: 'https://music.yandex.ru/iframe/#album/5156765'
         },
         {
           id: 2,
           name: 'Code Orange - The Hurt Will Go On',
-          path: require('@/assets/ep2018/2.jpg'),
+          path:  require('@/assets/ep2018/2.jpg'),
           link: 'https://music.yandex.ru/iframe/#album/5475685'
         },
         {
           id: 3,
           name: 'Converge - Beautiful Ruin',
-          path: require('@/assets/ep2018/3.jpg'),
+          path:  require('@/assets/ep2018/3.jpg'),
           link: 'https://music.yandex.ru/iframe/#album/5476836'
         },
         {
           id: 4,
           name: 'Cryptopsy - Book Of Suffering Tome - II',
-          path: require('@/assets/ep2018/4.jpg'),
+          path:  require('@/assets/ep2018/4.jpg'),
           link: 'https://music.yandex.ru/iframe/#album/5747986'
         },
         {
           id: 5,
           name: 'Every Stranger Looks Like You - I - Levensmoeheid',
-          path: require('@/assets/ep2018/5.jpg'),
+          path:  require('@/assets/ep2018/5.jpg'),
           link: 'https://music.yandex.ru/iframe/#album/5870341'
         },
         {
           id: 6,
           name: 'Nine Inch Nails - Bad Witch',
-          path: require('@/assets/ep2018/6.jpg'),
+          path:  require('@/assets/ep2018/6.jpg'),
           link: 'https://music.yandex.ru/iframe/#album/5369599'
         },
         {
           id: 7,
           name: 'Rotten Sound - Suffer To Abuse',
-          path: require('@/assets/ep2018/7.jpg'),
+          path:  require('@/assets/ep2018/7.jpg'),
           link: 'https://music.yandex.ru/iframe/#album/5057178'
         },
         {
           id: 8,
           name: 'Thou - Rheia Sylvia',
-          path: require('@/assets/ep2018/8.jpg'),
+          path:  require('@/assets/ep2018/8.jpg'),
           link: 'https://bandcamp.com/EmbeddedPlayer/album=2880169009/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/'
         },
       ],
@@ -83,14 +87,41 @@ export default {
   },
   methods: {
     addIframeSrc() {
-        const frame = event.target.nextSibling.nextSibling;
-        if (!frame.classList.contains('showFrame')) {
-          frame.classList.remove('hideFrame');
-          frame.classList.add('showFrame');
-        } else {
-          frame.classList.remove('showFrame');
-          frame.classList.add('hideFrame');
-        } 
+      const frame = event.target.nextSibling.nextSibling;
+      if (!frame.classList.contains('showFrame')) {
+        frame.classList.remove('hideFrame');
+        frame.classList.add('showFrame');
+        this.isFrameVisible = true;
+        this.isFrameShown = true;
+
+        const artworks = document.querySelectorAll('.artwork');
+        artworks.forEach(artwork => {
+          artwork.classList.add('filter-blur');
+          artwork.addEventListener('click', (event) => {
+            event.preventDefault();
+            event.stopPropagation(); 
+            return false;
+          });
+        });
+
+      } else {
+        frame.classList.remove('showFrame');
+        frame.classList.add('hideFrame');
+        this.isFrameVisible = false;
+
+        const artworks = document.querySelectorAll('.artwork');
+        artworks.forEach(artwork => {
+          artwork.classList.remove('filter-blur');
+        });
+      }
+    },
+    closeFrame() {
+      this.isFrameShown = false;
+      this.isFrameVisible = false;
+      const artworks = document.querySelectorAll('.artwork');
+      artworks.forEach(artwork => {
+        artwork.classList.remove('filter-blur');
+      });
     }
   },
 }
