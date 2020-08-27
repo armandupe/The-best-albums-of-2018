@@ -45,11 +45,15 @@ iframe {
 
 .close-button {
   position: absolute;
-  width: 25px;
-  height: 25px;
-  font-size: 2.5rem;
-  top: 45%;
-  left: 59%;
+  // width: 25px;
+  // height: 25px;
+  width: 3750px;
+  height: 1100px;
+  top: 0;
+  left: 0;
+  font-size: 4.5rem;
+  // top: 45%;
+  // left: 59%;
   z-index: 66;
   cursor: pointer;
   &:hover {
@@ -67,6 +71,9 @@ iframe {
   height: auto;
   transition: .3s;
   cursor: pointer;
+  &:hover {
+    opacity: .7;
+  }
 }
 
 .filter-blur {
@@ -78,10 +85,6 @@ iframe {
   &__title::selection {
     color: #42b983;
   }
-}
-
-.artwork:hover {
-  opacity: .7;
 }
 
 .hideFrame {

@@ -87,41 +87,41 @@ export default {
   },
   methods: {
     addIframeSrc() {
-      const frame = event.target.nextSibling.nextSibling;
+      const frame = event.target.nextSibling.nextSibling;   
       if (!frame.classList.contains('showFrame')) {
         frame.classList.remove('hideFrame');
         frame.classList.add('showFrame');
         this.isFrameVisible = true;
         this.isFrameShown = true;
 
-        const artworks = document.querySelectorAll('.artwork');
-        artworks.forEach(artwork => {
-          artwork.classList.add('filter-blur');
-          artwork.addEventListener('click', (event) => {
+        const albumTitles = document.querySelectorAll('.album__title');
+        albumTitles.forEach(albumTitle => {
+          albumTitle.addEventListener('click', (event) => {
             event.preventDefault();
-            event.stopPropagation(); 
+            event.stopPropagation();
             return false;
-          });
+          })
         });
 
+        const artworks = document.querySelectorAll('.artwork');
+        artworks.forEach(artwork => artwork.classList.add('filter-blur'));
       } else {
         frame.classList.remove('showFrame');
         frame.classList.add('hideFrame');
         this.isFrameVisible = false;
 
         const artworks = document.querySelectorAll('.artwork');
-        artworks.forEach(artwork => {
-          artwork.classList.remove('filter-blur');
-        });
+        artworks.forEach(artwork => artwork.classList.remove('filter-blur'));
       }
     },
     closeFrame() {
+      // console.log(event.target.previousSibling);
+      // const frame = event.target.previousSibling;
+      // frame.classList.remove('showFrame');
       this.isFrameShown = false;
       this.isFrameVisible = false;
       const artworks = document.querySelectorAll('.artwork');
-      artworks.forEach(artwork => {
-        artwork.classList.remove('filter-blur');
-      });
+      artworks.forEach(artwork => artwork.classList.remove('filter-blur'));
     }
   },
 }
