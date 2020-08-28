@@ -115,14 +115,15 @@ export default {
       }
     },
     closeFrame() {
-      // console.log(event.target.previousSibling);
-      // const frame = event.target.previousSibling;
-      // frame.classList.remove('showFrame');
       this.isFrameShown = false;
       this.isFrameVisible = false;
       const artworks = document.querySelectorAll('.artwork');
       artworks.forEach(artwork => artwork.classList.remove('filter-blur'));
     }
   },
+  mounted() {
+      const clsBtns = document.querySelectorAll('.close-button');
+      clsBtns.forEach(btn => btn.addEventListener('click', event => event.stopPropagation()));
+  }
 }
 </script>
