@@ -10,7 +10,7 @@
     v-show="isFrameShown"
     :src="image.link">
     </iframe>
-    <div @click="closeFrame()" v-show="isFrameVisible" class="close-button">×</div>
+    <div @click="closeFrame()" v-show="isFrameVisible" class="close-button"></div>
   </div>
 </main>
 </template>
