@@ -37,7 +37,7 @@ iframe {
   width: 450px;
   height: 450px;
   position: absolute;
-  z-index: 4;
+  z-index: 70;
   top: 50%;
   left: 35%;
   box-shadow: 1px 1px 10px 10px;
@@ -45,15 +45,11 @@ iframe {
 
 .close-button {
   position: absolute;
-  // width: 25px;
-  // height: 25px;
   width: 3750px;
   height: 1100px;
   top: 0;
   left: 0;
   font-size: 4.5rem;
-  // top: 45%;
-  // left: 59%;
   z-index: 66;
   cursor: pointer;
   &:hover {
@@ -64,6 +60,11 @@ iframe {
 .template-container {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }   
+  
 }
 
 .artwork {
@@ -81,7 +82,10 @@ iframe {
 }
 
 .album {
-  width: 25%;
+  width: 100%;
+  @media (min-width: 768px) {
+    width: 25%;
+  }  
   &__title::selection {
     color: #42b983;
   }

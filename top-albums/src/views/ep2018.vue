@@ -6,7 +6,7 @@
     <iframe
     loading="lazy"
     frameborder="0"
-    class="hideFrame"
+    class="hideFrame frames"
     v-show="isFrameShown"
     :src="image.link">
     </iframe>
@@ -105,18 +105,18 @@ export default {
 
         const artworks = document.querySelectorAll('.artwork');
         artworks.forEach(artwork => artwork.classList.add('filter-blur'));
-      } else {
-        frame.classList.remove('showFrame');
-        frame.classList.add('hideFrame');
-        this.isFrameVisible = false;
-
-        const artworks = document.querySelectorAll('.artwork');
-        artworks.forEach(artwork => artwork.classList.remove('filter-blur'));
       }
     },
     closeFrame() {
       this.isFrameShown = false;
       this.isFrameVisible = false;
+
+      const frames = document.querySelectorAll('.frames');
+      frames.forEach(frame => {
+        frame.classList.remove('showFrame');
+        frame.classList.add('hideFrame');
+      });
+     
       const artworks = document.querySelectorAll('.artwork');
       artworks.forEach(artwork => artwork.classList.remove('filter-blur'));
     }
@@ -124,6 +124,6 @@ export default {
   mounted() {
       const clsBtns = document.querySelectorAll('.close-button');
       clsBtns.forEach(btn => btn.addEventListener('click', event => event.stopPropagation()));
-  }
+  },
 }
 </script>
