@@ -33,3 +33,16 @@
     }
 }
 </style>
+
+<script>
+export default {
+    mounted() {
+        const nav = document.getElementById('nav');
+        const home = document.querySelector('.home');
+        const links = document.querySelectorAll('.home__list-link');
+        
+        if (home) nav.classList.add('hideFrame');
+        links.forEach(link => link.addEventListener('click', () => nav.classList.remove('hideFrame')));
+    }
+}
+</script>>
