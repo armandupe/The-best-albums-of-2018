@@ -76,6 +76,25 @@
         ></div>
       </div>
     </section>
+    <section class="template-container" v-if="currentPage == '#/albums2020'">
+      <div class="album" v-for="image in imagesAlbums2020" :key="image.id">
+        <img class="artwork" :src="image.path" :alt="alt" />
+        <p class="album__title">{{ image.name }}</p>
+        <iframe
+          loading="lazy"
+          frameborder="0"
+          class="hideFrame frames"
+          v-show="isFrameShown"
+          :src="image.link"
+        >
+        </iframe>
+        <div
+          @click="closeFrame()"
+          v-show="isFrameVisible"
+          class="close-button"
+        ></div>
+      </div>
+    </section>
   </main>
 </template>
 
@@ -106,7 +125,7 @@
   }
 
   &:hover .album__title {
-    color: #7a9fc4;
+    color: var(--album-title);
   }
 
   &__title {
@@ -123,7 +142,7 @@
 }
 
 .filter-blur {
-  filter: blur(3px);
+  filter: var(--filter);
 }
 
 .close-button {
@@ -137,7 +156,7 @@
   z-index: 66;
   cursor: pointer;
   &:hover {
-    color: #42b983;
+    color: var(--link-active-color);
   }
 }
 
@@ -149,7 +168,7 @@ iframe {
   z-index: 70;
   top: 25%;
   left: 0%;
-  box-shadow: 1px 1px 15px 5px #42b983;
+  box-shadow: var(--shadow-iframe);
   @media (min-width: 600px) {
     height: 450px;
   }
@@ -169,7 +188,6 @@ export default {
       isFrameVisible: false,
       isFrameShown: true,
       alt: "album cover",
-      jsonPath: require("@/albumCovers.json"),
       imagesAlbums2018: [
         {
           id: 1,
@@ -476,6 +494,68 @@ export default {
           name: "Touche Amore - Dead Horse X",
           path: require("@/assets/albums2019/10.jpg"),
           link: "https://open.spotify.com/embed/album/18mkStcF82XtIJT9ENw9pa",
+        },
+      ],
+      imagesAlbums2020: [
+        {
+          id: 1,
+          name: "Code Orange - Underneath",
+          path: require("@/assets/albums2020/1.jpg"),
+          link: "https://open.spotify.com/embed/album/70kThssMOMBi4GyBPCk0Gu",
+        },
+        {
+          id: 2,
+          name: "The Ocean - Phanerozoic II: Mesozoic / Cenozoic",
+          path: require("@/assets/albums2020/2.jpg"),
+          link: "https://open.spotify.com/embed/album/26TeqFz1sPbJT6VjAbBtzl",
+        },
+        {
+          id: 3,
+          name: "Kvelertak - Splid",
+          path: require("@/assets/albums2020/3.jpg"),
+          link: "https://open.spotify.com/embed/album/2pWZs59DuDL7ZTpRjjRq65",
+        },
+        {
+          id: 4,
+          name: "Sepultura - Quadra",
+          path: require("@/assets/albums2020/4.jpg"),
+          link: "https://open.spotify.com/embed/album/0tcLKzf5Rudm66ApoNKpGm",
+        },
+        {
+          id: 5,
+          name: "Ulcerate - Stare Into Death And Be Still",
+          path: require("@/assets/albums2020/5.jpg"),
+          link: "https://open.spotify.com/embed/album/3IiK3vbVUx7U8rEHuY32sl",
+        },
+        {
+          id: 6,
+          name: "Imperial Triumphant - Alphaville",
+          path: require("@/assets/albums2020/6.jpg"),
+          link: "https://open.spotify.com/embed/album/1VAxNxcYUKpJ1XEJW12oPY",
+        },
+        {
+          id: 7,
+          name: "END - Splinters from an Ever-Changing Face",
+          path: require("@/assets/albums2020/7.jpg"),
+          link: "https://open.spotify.com/embed/album/6X3196GAOJl9oHyQC2YJNm",
+        },
+        {
+          id: 8,
+          name: "Mrs. Piss - Self-Surgery",
+          path: require("@/assets/albums2020/8.jpg"),
+          link: "https://open.spotify.com/embed/album/5AXqrGlN5HqydZftOZbMiX",
+        },
+        {
+          id: 9,
+          name: "Old Man Gloom - Seminar IX: Darkness of Being",
+          path: require("@/assets/albums2020/9.jpg"),
+          link: "https://open.spotify.com/embed/album/4ohKZ8tr6CZ9wlkikJbxkQ",
+        },
+        {
+          id: 10,
+          name: "Realize - Machine Violence",
+          path: require("@/assets/albums2020/10.jpg"),
+          link: "https://open.spotify.com/embed/album/2adncZksC8j5GeagRKPNsP",
         },
       ],
     };

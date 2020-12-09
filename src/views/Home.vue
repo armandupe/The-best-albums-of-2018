@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <ul class="home__list">
+      <router-link class="home__list-link" to="/albums2020">2020</router-link>
       <router-link class="home__list-link" to="/albums2019">2019</router-link>
       <router-link class="home__list-link" to="/albums2018">2018</router-link>
       <router-link class="home__list-link" to="/russian2018">russian 2018</router-link>
@@ -22,7 +23,7 @@
     justify-content: space-around;
   }
   &__list-link {
-    color: #42b983;
+    color: var(--link-active-color);
     font-size: 6rem;
     text-decoration: none;
     transition: 0.3s;

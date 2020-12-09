@@ -3,12 +3,10 @@
     <div id="nav">
       <router-link class="nav__link" to="/">Home</router-link> |
       <router-link class="nav__link" to="/albums2018">albums 2018</router-link>
-      <router-link class="nav__link" to="/russian2018"
-        >russian albums 2018</router-link
-      >
+      <router-link class="nav__link" to="/russian2018">russian albums 2018</router-link>
       <router-link class="nav__link" to="/ep2018">ep 2018</router-link>
       <router-link class="nav__link" to="/albums2019">albums 2019</router-link>
-      |
+      <router-link class="nav__link" to="/albums2020">albums 2020</router-link> |
     </div>
     <router-view />
   </div>
@@ -21,9 +19,19 @@ export default {
 </script>
 
 <style lang="scss">
+:root {
+  --font-famly: "Oswald", sans-serif;
+  --bg-color: #000;
+  --text-color: #2c3e50;
+  --link-active-color: #42b983;
+  --shadow-iframe: 1px 1px 15px 5px #42b983;
+  --album-title:  #7a9fc4;
+  --filter: blur(3px);
+}
+
 body {
-  font-family: "Oswald", sans-serif;
-  background-color: #000;
+  font-family: var(--font-famly);
+  background-color: var(--bg-color);
   margin: 0;
   overflow-x: hidden;
   -ms-overflow-style: none;
@@ -43,19 +51,18 @@ body::-webkit-scrollbar {
 
 #app {
   text-align: center;
-  color: #2c3e50;
+  color: var(--text-color);
 }
 
 #nav {
-  padding: 30px;
-
+  padding: 1rem;
   a {
     font-weight: bold;
-    color: #2c3e50;
+    color: var(--text-color);
     padding: 1rem;
 
     &.router-link-exact-active {
-      color: #42b983;
+      color: var(--link-active-color);
     }
   }
 }
