@@ -12,7 +12,7 @@ npm run serve
 
 ### Compiles and minifies for production
 ```
-npm script-run build
+npm run-script build
 ```
 
 ### Customize configuration
