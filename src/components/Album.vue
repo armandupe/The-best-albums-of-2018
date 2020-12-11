@@ -557,6 +557,18 @@ export default {
           path: require("@/assets/albums2020/10.jpg"),
           link: "https://open.spotify.com/embed/album/2adncZksC8j5GeagRKPNsP",
         },
+        {
+          id: 11,
+          name: "Black Magnet - Hallucination Scene",
+          path: require("@/assets/albums2020/11.jpg"),
+          link: "https://open.spotify.com/embed/album/2dAjpnMF8aVIukdi3FebZx",
+        },
+        {
+          id: 12,
+          name: "Soilwork - A Whisp Of The Atlantic",
+          path: require("@/assets/albums2020/12.jpg"),
+          link: "https://open.spotify.com/embed/album/39FoTXhyioMJWeNi11dZ4p",
+        },
       ],
     };
   },
