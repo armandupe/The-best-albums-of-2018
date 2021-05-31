@@ -4,7 +4,7 @@
       <div class="album" v-for="data in albumCovers2018" :key="data.id">
         <img class="artwork" :src="require(`@/assets/albums2018/${data.id}.jpg`)" :alt="alt" />
         <p class="album__title">{{ data.name }}</p>
-        <iframe loading="lazy" frameborder="0" class="hideFrame frames" v-show="isFrameShown" :src="data.link"> </iframe>
+        <iframe loading="lazy" frameborder="0" class="hideFrame frames" v-show="isFrameShown" :src="`${spotifyLinkToAlbum}${data.link}`"> </iframe>
         <div @click="closeFrame()" v-show="isFrameVisible" class="close-button"></div>
       </div>
     </section>
@@ -12,7 +12,7 @@
       <div class="album" v-for="data in epCovers2018" :key="data.id">
         <img class="artwork" :src="require(`@/assets/ep2018/${data.id}.jpg`)" :alt="alt" />
         <p class="album__title">{{ data.name }}</p>
-        <iframe loading="lazy" frameborder="0" class="hideFrame frames" v-show="isFrameShown" :src="data.link"> </iframe>
+        <iframe loading="lazy" frameborder="0" class="hideFrame frames" v-show="isFrameShown" :src="`${spotifyLinkToAlbum}${data.link}`"> </iframe>
         <div @click="closeFrame()" v-show="isFrameVisible" class="close-button"></div>
       </div>
     </section>
@@ -20,7 +20,7 @@
       <div class="album" v-for="data in russian2018" :key="data.id">
         <img class="artwork" :src="require(`@/assets/russian2018/${data.id}.jpg`)" :alt="alt" />
         <p class="album__title">{{ data.name }}</p>
-        <iframe loading="lazy" frameborder="0" class="hideFrame frames" v-show="isFrameShown" :src="data.link"> </iframe>
+        <iframe loading="lazy" frameborder="0" class="hideFrame frames" v-show="isFrameShown" :src="`${spotifyLinkToAlbum}${data.link}`"> </iframe>
         <div @click="closeFrame()" v-show="isFrameVisible" class="close-button"></div>
       </div>
     </section>
@@ -28,7 +28,7 @@
       <div class="album" v-for="data in albumCovers2019" :key="data.id">
         <img class="artwork" :src="require(`@/assets/albums2019/${data.id}.jpg`)" :alt="alt" />
         <p class="album__title">{{ data.name }}</p>
-        <iframe loading="lazy" frameborder="0" class="hideFrame frames" v-show="isFrameShown" :src="data.link"> </iframe>
+        <iframe loading="lazy" frameborder="0" class="hideFrame frames" v-show="isFrameShown" :src="`${spotifyLinkToAlbum}${data.link}`"> </iframe>
         <div @click="closeFrame()" v-show="isFrameVisible" class="close-button"></div>
       </div>
     </section>
@@ -36,7 +36,7 @@
       <div class="album" v-for="data in albumCovers2020" :key="data.id">
         <img class="artwork" :src="require(`@/assets/albums2020/${data.id}.jpg`)" :alt="alt" />
         <p class="album__title">{{ data.name }}</p>
-        <iframe loading="lazy" frameborder="0" class="hideFrame frames" v-show="isFrameShown" :src="data.link"> </iframe>
+        <iframe loading="lazy" frameborder="0" class="hideFrame frames" v-show="isFrameShown" :src="`${spotifyLinkToAlbum}${data.link}`"> </iframe>
         <div @click="closeFrame()" v-show="isFrameVisible" class="close-button"></div>
       </div>
     </section>
@@ -137,6 +137,7 @@ export default {
       currentPage: window.location.hash,
       isFrameVisible: false,
       isFrameShown: true,
+      spotifyLinkToAlbum: "https://open.spotify.com/embed/album/",
       alt: "album cover",
       albumCovers2018: albumCovers2018,
       epCovers2018: epCovers2018,
